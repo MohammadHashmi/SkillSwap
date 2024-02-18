@@ -1,6 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
-import { getDatabase, set, ref } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
-import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+import { getDatabase, get, ref, child } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
+import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
 
 const firebaseConfig = {
     apiKey: "AIzaSyD7Z2vtdfh453x1PvhdnfI6vMB15szEB8I",
@@ -14,30 +14,25 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getDatabase();
 const auth = getAuth();
+const dbref = ref(db);
 
 let email = document.getElementById("email");
 let password = document.getElementById("password");
-let firstName = document.getElementById("firstName");
-let lastName = document.getElementById("lastName");
-let dropdown = document.getElementById("dropdown");
-let signUpForm = document.getElementById("signUpForm");
+let loginForm = document.getElementById("loginForm");
 
-let RegisterUser = evt => {
+let SignInUser = evt => {
     evt.preventDefault();
 
-    createUserWithEmailAndPassword(auth, email.value, password.value, name.value)
+    signInWithEmailAndPassword(auth, email.value, password.value)
     .then((credentials) => {
-        console.log(email.value)
-        console.log(password.value)
-        console.log(firstName.value)
-        console.log(lastName.value)
-        console.log(dropdown.value)
         console.log(credentials)
+        console.log("Sign in successful")
     })
     .catch((error) => {
         console.log(error.code)
         console.log(error.message)
+        console.log("Sign in failed")
     })
 }
 
-signUpForm.addEventListener("submit", RegisterUser);
+loginForm.addEventListener("submit", SignInUser);
