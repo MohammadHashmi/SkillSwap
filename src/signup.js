@@ -17,14 +17,21 @@ const auth = getAuth();
 
 let email = document.getElementById("email");
 let password = document.getElementById("password");
+let firstName = document.getElementById("firstName");
+let lastName = document.getElementById("lastName");
+let dropdown = document.getElementById("dropdown");
+let signUpForm = document.getElementById("signUpForm");
 
 let RegisterUser = evt => {
     evt.preventDefault();
 
-    createUserWithEmailAndPassword(auth, email.value, password.value)
+    createUserWithEmailAndPassword(auth, email.value, password.value, name.value)
     .then((credentials) => {
         console.log(email.value)
         console.log(password.value)
+        console.log(firstName.value)
+        console.log(lastName.value)
+        console.log(dropdown.value)
         console.log(credentials)
     })
     .catch((error) => {
@@ -33,4 +40,4 @@ let RegisterUser = evt => {
     })
 }
 
-MainForm.addEventListener("submit", RegisterUser);
+signUpForm.addEventListener("submit", RegisterUser);
