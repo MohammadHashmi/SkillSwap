@@ -1,13 +1,4 @@
-import { getAuth } from "firebase/auth";
-
-const auth = getAuth();
-const user = auth.currentUser;
-if (user !== null) {
-  // The user object has basic properties such as display name, email, etc.
-  const email = user.email;
-  const uid = user.uid;
-
-  Talk.ready.then(function () {
+Talk.ready.then(function () {
     var me = new Talk.User({
       id: '123456',
       name: 'Alice',
@@ -37,5 +28,4 @@ if (user !== null) {
     inbox.select(conversation);
     inbox.mount(document.getElementById('talkjs-container'));
   });
-}
 

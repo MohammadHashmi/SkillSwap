@@ -31,6 +31,10 @@ app.get('/bazaar.html', (req, res) => {
     res.sendFile((path.join(__dirname, '..') + '/public/src/bazaar.html'))
 })
 
+app.get('/texting.html', (req, res) => {
+    res.sendFile((path.join(__dirname, '..') + '/public/src/texting.html'))
+})
+
 app.listen(port, () => {
   console.log(`App listening on port ${port}`)
 })
