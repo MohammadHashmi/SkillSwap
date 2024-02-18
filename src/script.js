@@ -8,9 +8,12 @@ if (user !== null) {
   const uid = user.uid;
 
   Talk.ready.then(function () {
-    const me = new Talk.User({
-      id: uid,
-      email: email,
+    var me = new Talk.User({
+      id: '123456',
+      name: 'Alice',
+      email: 'alice@example.com',
+      photoUrl: 'https://talkjs.com/images/avatar-1.jpg',
+      welcomeMessage: 'Hey there! How are you? :-)',
     });
     window.talkSession = new Talk.Session({
       appId: 'tLLHh84Q',
