@@ -7,7 +7,7 @@ Talk.ready.then(function () {
       welcomeMessage: 'Hey there! How are you? :-)',
     });
     window.talkSession = new Talk.Session({
-      appId: 'tLLHh84Q',
+      appId: 'tBA0FUy7',
       me: me,
     });
     var other = new Talk.User({
