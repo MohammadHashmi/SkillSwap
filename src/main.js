@@ -27,6 +27,9 @@ app.get('/contracts.html', (req, res) => {
     res.sendFile((path.join(__dirname, '..') + '/public/src/contracts.html'))
 })
 
+app.get('/bazaar.html', (req, res) => {
+    res.sendFile((path.join(__dirname, '..') + '/public/src/bazaar.html'))
+})
 
 app.listen(port, () => {
   console.log(`App listening on port ${port}`)
