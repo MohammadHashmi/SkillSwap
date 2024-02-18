@@ -12,9 +12,9 @@ Talk.ready.then(function () {
     });
     var other = new Talk.User({
       id: '654321',
-      name: 'Sebastian',
-      email: 'Sebastian@example.com',
-      photoUrl: 'https://talkjs.com/images/avatar-5.jpg',
+      name: 'Peyton',
+      email: 'Peyton1@gmail.com',
+      photoUrl: 'https://talkjs.com/images/avatar-4.jpg',
       welcomeMessage: 'Hey, how can I help?',
     });
   
